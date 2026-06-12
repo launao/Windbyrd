@@ -7,9 +7,9 @@
 <meta name="description" content="Estudio creativo de marketing digital especializado en la industria de alimentos en Latam. Fuimos clientes, somos agencia: estrategias a la medida de tu negocio, medidas en resultados.">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 
 <!-- Open Graph (vista previa al compartir el link) -->
 <meta property="og:type" content="website">
@@ -191,6 +191,35 @@ nav{
 .brand img{width:46px;height:46px;border-radius:10px;object-fit:contain;background:#fff;padding:4px}
 .brand:hover{filter:grayscale(0);opacity:1}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- REEL ---------- */
+.reel{padding:7rem 6vw;background:var(--white)}
+.reel .sec-head{text-align:center;margin-bottom:3rem}
+.reel .sec-head h2{margin:0 auto}
+.reel .sec-head .label::before{display:none}
+.video-wrap{
+  position:relative;max-width:980px;margin:0 auto;aspect-ratio:16/9;
+  border-radius:24px;overflow:hidden;cursor:pointer;
+  box-shadow:0 30px 80px rgba(29,22,49,.18);
+  transition:transform .4s cubic-bezier(.2,.65,.3,1),box-shadow .4s;
+}
+.video-wrap:hover{transform:translateY(-5px);box-shadow:0 40px 100px rgba(29,22,49,.24)}
+.video-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:92px;height:92px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(253,252,250,.92);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .35s,background .35s;
+}
+.video-wrap:hover .play-btn{transform:translate(-50%,-50%) scale(1.1);background:var(--accent)}
+.play-btn::after{
+  content:'';display:block;margin-left:6px;
+  border-left:26px solid var(--ink-brand);border-top:16px solid transparent;border-bottom:16px solid transparent;
+  transition:border-left-color .35s;
+}
+.video-wrap:hover .play-btn::after{border-left-color:#fff}
 
 /* ---------- SECTIONS ---------- */
 section{padding:8rem 6vw}
@@ -401,6 +430,18 @@ footer{
   </div>
 </div>
 
+<!-- REEL -->
+<section class="reel" id="reel">
+  <div class="sec-head">
+    <span class="label reveal">Showreel</span>
+    <h2 class="reveal">Así se ve la <span class="it">creatividad que vende</span>.</h2>
+  </div>
+  <div class="video-wrap reveal d1" id="videoWrap" role="button" aria-label="Reproducir reel de Windbyrd Studio" tabindex="0">
+    <img src="https://i.ytimg.com/vi/Lszsc8A7L3k/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/Lszsc8A7L3k/hqdefault.jpg'" alt="Windbyrd Studio Reel" loading="lazy">
+    <button class="play-btn" aria-hidden="true"></button>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about" id="nosotros">
   <div class="sec-head">
@@ -569,6 +610,14 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const burger=document.querySelector('.hamburger'),links=document.querySelector('.nav-links');
 burger.addEventListener('click',()=>links.classList.toggle('open'));
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// Reel: carga YouTube solo al hacer clic
+const vw=document.getElementById('videoWrap');
+function playReel(){
+  vw.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/Lszsc8A7L3k?autoplay=1&rel=0" title="Windbyrd Studio Reel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+}
+vw.addEventListener('click',playReel);
+vw.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();playReel();}});
 
 // Orbes que siguen el mouse (solo desktop, respeta reduced-motion)
 const orbs=document.querySelectorAll('.orb');
