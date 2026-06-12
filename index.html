@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windbyrd Studio | Creatividad que vende — Marketing para alimentos en Latam</title>
+<meta name="description" content="Estudio creativo de marketing digital especializado en la industria de alimentos en Latam. Fuimos clientes, somos agencia: estrategias a la medida de tu negocio, medidas en resultados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Windbyrd Studio",
+  "description": "Estudio creativo de marketing digital especializado en la industria de alimentos en Latam.",
+  "email": "hello@windbyrdstudio.com",
+  "telephone": "+57 313 866 6653",
+  "address": {"@type": "PostalAddress", "addressCountry": "PA"},
+  "areaServed": ["MX","PA","CO","EC","PE","CL","AR"],
+  "slogan": "Creatividad que vende."
+}
+</script>
+<style>
+:root{
+  --white:#FDFCFA;
+  --pearl:#F8F6F1;
+  --beige:#EFEAE0;
+  --line:rgba(40,38,34,.10);
+  --ink:#2B2925;
+  --gray:#8B867C;
+  --gray-soft:#C2BCB0;
+  --ink-brand:#1D1631;
+  --accent:#FF6A55;
+  --teal:#3EC6E0;
+  --purple:#9B7BE8;
+  --grad:linear-gradient(90deg,#3EC6E0 0%,#9B7BE8 50%,#FF8A70 100%);
+  --serif:'Outfit',sans-serif;
+  --sans:'Outfit',sans-serif;
+  --brand-font:'Poppins',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);font-weight:300;
+  background:var(--white);color:var(--ink);
+  line-height:1.7;font-size:16px;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.02em;color:var(--ink-brand)}
+.it{
+  font-style:normal;
+  background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+::selection{background:var(--accent);color:#fff}
+img{max-width:100%}
+
+.label{
+  font-family:var(--sans);font-weight:400;font-size:.7rem;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gray);
+}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.4rem 6vw;
+  background:rgba(253,252,250,.85);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.logo{
+  font-family:var(--brand-font);font-weight:700;font-size:1.35rem;letter-spacing:-.01em;
+  color:var(--ink-brand);text-decoration:none;line-height:1;display:inline-block;
+}
+.logo .i{position:relative;display:inline-block}
+.logo .i::after{
+  content:'';position:absolute;left:50%;transform:translateX(-50%);top:-.3em;
+  width:.2em;height:.2em;border-radius:50%;background:var(--accent);
+}
+.logo .studio{
+  display:block;font-weight:500;font-size:.58em;letter-spacing:.02em;text-align:right;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-top:.1em;
+}
+.nav-links{display:flex;gap:2.6rem;align-items:center;list-style:none}
+.nav-links a{
+  color:var(--ink);text-decoration:none;font-size:.82rem;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;position:relative;
+}
+.nav-links a:not(.btn)::after{
+  content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--ink);transition:width .4s;
+}
+.nav-links a:not(.btn):hover::after{width:100%}
+.btn{
+  display:inline-block;font-family:var(--sans);font-weight:400;
+  font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink) !important;text-decoration:none;cursor:pointer;
+  padding:.9rem 2.2rem;border:1px solid var(--ink);border-radius:50px;
+  background:transparent;transition:background .35s,color .35s,border-color .35s;
+}
+.btn:hover{background:var(--ink);color:var(--white) !important}
+.btn-solid{background:var(--ink);color:var(--white) !important}
+.btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;color:var(--ink);cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:10rem 6vw 5rem;position:relative;background:var(--white);
+  overflow:hidden;
+}
+.orbs{position:absolute;inset:0;pointer-events:none;z-index:0}
+.orb{
+  position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;
+  will-change:transform;transition:transform 1.2s cubic-bezier(.2,.65,.3,1);
+}
+.orb1{width:46vw;height:46vw;max-width:620px;max-height:620px;top:-12%;right:-10%;
+  background:radial-gradient(circle,rgba(62,198,224,.34),transparent 65%);
+  animation:drift1 14s ease-in-out infinite alternate;}
+.orb2{width:38vw;height:38vw;max-width:520px;max-height:520px;bottom:-14%;left:-8%;
+  background:radial-gradient(circle,rgba(255,138,112,.32),transparent 65%);
+  animation:drift2 17s ease-in-out infinite alternate;}
+.orb3{width:30vw;height:30vw;max-width:420px;max-height:420px;top:30%;left:18%;
+  background:radial-gradient(circle,rgba(155,123,232,.26),transparent 65%);
+  animation:drift3 20s ease-in-out infinite alternate;}
+@keyframes drift1{from{translate:0 0}to{translate:-5vw 6vh}}
+@keyframes drift2{from{translate:0 0}to{translate:6vw -5vh}}
+@keyframes drift3{from{translate:0 0}to{translate:4vw 7vh}}
+.hero>*:not(.orbs){position:relative;z-index:1}
+.it{background-size:200% auto;animation:gradShift 6s ease-in-out infinite alternate}
+@keyframes gradShift{from{background-position:0% center}to{background-position:100% center}}
+.hero .label{margin-bottom:2.4rem}
+.hero h1{
+  font-size:clamp(3.4rem,10vw,8.8rem);font-weight:300;line-height:1.04;letter-spacing:.005em;
+}
+.hero p{
+  max-width:620px;margin-top:2.6rem;font-size:1.02rem;color:var(--gray);font-weight:300;
+}
+.hero p strong{font-weight:400;color:var(--ink)}
+.hero-cta{margin-top:3.2rem;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.hero-cta .hint{font-size:.78rem;letter-spacing:.1em;color:var(--gray-soft)}
+.scroll-ind{
+  position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gray-soft);
+}
+.scroll-ind .line{width:1px;height:48px;background:var(--line);overflow:hidden;position:relative}
+.scroll-ind .line::after{
+  content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--ink);
+  animation:scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine{0%{top:-100%}60%{top:0}100%{top:100%}}
+
+/* ---------- SOCIAL PROOF ---------- */
+.social-proof{padding:3.4rem 0;border-top:1px solid var(--line);background:var(--pearl)}
+.social-proof .label{display:block;text-align:center;margin-bottom:2.4rem}
+.marquee{overflow:hidden;white-space:nowrap;position:relative}
+.marquee::before,.marquee::after{
+  content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none;
+}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--pearl),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--pearl),transparent)}
+.marquee-track{display:inline-flex;align-items:center;gap:5.5rem;animation:marquee 32s linear infinite;padding-right:5.5rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.85rem;
+  font-family:var(--sans);font-weight:400;font-size:1rem;letter-spacing:.08em;color:var(--gray);
+  filter:grayscale(1);opacity:.65;transition:filter .4s,opacity .4s;
+}
+.brand img{width:46px;height:46px;border-radius:10px;object-fit:contain;background:#fff;padding:4px}
+.brand:hover{filter:grayscale(0);opacity:1}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:8rem 6vw}
+.sec-head{margin-bottom:4rem}
+.sec-head .label{display:block;margin-bottom:1.4rem}
+h2{font-size:clamp(2.2rem,5vw,4rem);font-weight:300;line-height:1.15;max-width:22ch}
+
+/* About */
+.about{background:var(--pearl);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:6rem;align-items:start}
+.about-text p{margin-bottom:1.6rem;color:#5A554B;font-weight:300;font-size:1.02rem}
+.about-text p strong{font-weight:400;color:var(--ink)}
+.about-text .btn{margin-top:1.2rem}
+.stats{display:flex;flex-direction:column}
+.stat{
+  padding:2.2rem 0;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:1.6rem;
+  transition:padding-left .4s;
+}
+.stat:first-child{border-top:1px solid var(--line)}
+.stat:hover{padding-left:.8rem}
+.stat .num{font-family:var(--serif);font-size:3.2rem;font-weight:300;line-height:1;color:var(--ink);min-width:120px}
+.stat .num em{color:var(--accent);font-style:normal}
+.stat .desc{font-size:.88rem;color:var(--gray);font-weight:300}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.card{
+  padding:3.2rem 2.8rem;border-bottom:1px solid var(--line);
+  position:relative;transition:background .4s;
+}
+.card:nth-child(odd){border-right:1px solid var(--line)}
+.card:hover{background:var(--pearl)}
+.card .svc-icon{
+  width:52px;height:52px;display:block;margin-bottom:1.5rem;
+  transition:transform .4s cubic-bezier(.2,.65,.3,1);
+}
+.card:hover .svc-icon{transform:translateY(-4px) scale(1.06)}
+.svc-icon path,.svc-icon circle,.svc-icon rect,.svc-icon line,.svc-icon polyline{
+  fill:none;stroke:url(#brandgrad);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;
+}
+.card h3{font-size:1.7rem;font-weight:400;margin-bottom:.9rem}
+.card .promise{color:var(--gray);font-size:.95rem;font-weight:300;margin-bottom:1.6rem;max-width:46ch}
+.card ul{list-style:none;margin-bottom:1.8rem}
+.card li{
+  font-size:.88rem;color:#5A554B;font-weight:300;
+  padding:.5rem 0;border-bottom:1px dashed rgba(40,38,34,.08);
+}
+.card li:last-child{border-bottom:none}
+.card a{
+  font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;
+  color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;
+  transition:color .3s,gap .3s;
+}
+.card a::after{content:'→'}
+.card a:hover{color:var(--accent);gap:.9rem}
+
+/* Method */
+.method{background:var(--beige);border-top:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;margin-top:4rem}
+.step .n{
+  font-family:var(--sans);font-weight:200;font-size:2.6rem;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;line-height:1;margin-bottom:1.2rem;
+}
+.step h3{font-size:1.25rem;font-weight:400;margin-bottom:.7rem}
+.step p{font-size:.88rem;color:var(--gray);font-weight:300}
+.method-close{
+  margin-top:5rem;padding-top:3rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:2.5rem;flex-wrap:wrap;
+}
+.method-close p{font-family:var(--serif);font-size:1.6rem;font-weight:300;max-width:560px;line-height:1.4;color:var(--ink-brand)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-top:1rem}
+.contact-info p{color:var(--gray);font-weight:300;font-size:1.02rem;max-width:440px;margin-bottom:2.6rem}
+.contact-direct{display:flex;flex-direction:column;gap:1.1rem;font-size:.92rem}
+.contact-direct a{
+  color:var(--ink);text-decoration:none;font-weight:300;letter-spacing:.04em;
+  display:inline-flex;align-items:center;gap:.7rem;transition:color .3s;
+}
+.contact-direct a:hover{color:var(--accent)}
+form{display:flex;flex-direction:column;gap:1.3rem}
+.radio-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:.4rem}
+.radio-row input{display:none}
+.radio-row label{
+  padding:.6rem 1.4rem;border-radius:50px;border:1px solid var(--line);
+  font-size:.78rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .3s;
+}
+.radio-row input:checked + label{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+input[type=text],input[type=email],textarea{
+  width:100%;padding:1rem 0;border:none;border-bottom:1px solid var(--line);
+  background:transparent;font-family:var(--sans);font-weight:300;font-size:.95rem;color:var(--ink);
+  transition:border-color .3s;
+}
+input::placeholder,textarea::placeholder{color:var(--gray-soft);letter-spacing:.04em}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--ink)}
+textarea{resize:vertical;min-height:110px}
+form .btn{align-self:flex-start;margin-top:.6rem}
+
+/* Footer */
+footer{
+  padding:3.4rem 6vw;display:flex;justify-content:space-between;align-items:center;gap:1.6rem;flex-wrap:wrap;
+  border-top:1px solid var(--line);font-size:.78rem;letter-spacing:.08em;color:var(--gray);
+  background:var(--pearl);
+}
+.foot-links{display:flex;gap:2rem;list-style:none}
+.foot-links a{color:var(--gray);text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem}
+.foot-links a:hover{color:var(--ink)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.2,.65,.3,1),transform 1s cubic-bezier(.2,.65,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.15s}
+.reveal.d2{transition-delay:.3s}
+.reveal.d3{transition-delay:.45s}
+
+/* Responsive */
+@media(max-width:880px){
+  .nav-links{
+    position:fixed;inset:0;top:66px;background:var(--white);
+    flex-direction:column;justify-content:center;gap:2.2rem;
+    transform:translateX(100%);transition:transform .4s;
+  }
+  .nav-links.open{transform:none}
+  .hamburger{display:block}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:3.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .card:nth-child(odd){border-right:none}
+  .steps{grid-template-columns:1fr 1fr;gap:2.4rem}
+  .field-row{grid-template-columns:1fr}
+  section{padding:5.5rem 7vw}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#top">W<span class="i">ı</span>ndbyrd<span class="studio">Studio</span></a>
+  <button class="hamburger" aria-label="Menú">☰</button>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#metodo">Método</a></li>
+    <li><a class="btn" href="#contacto">Hablemos</a></li>
+  </ul>
+</nav>
+
+<!-- Gradiente compartido para iconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="brandgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3EC6E0"/>
+      <stop offset="50%" stop-color="#9B7BE8"/>
+      <stop offset="100%" stop-color="#FF8A70"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="orbs" aria-hidden="true">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <span class="label reveal">Marketing · Industria de alimentos · Latam</span>
+  <h1 class="reveal d1">Creatividad<br>que <span class="it">vende</span>.</h1>
+  <p class="reveal d2">Estudio creativo de marketing digital especializado en la industria de alimentos en Latam. <strong>Fuimos clientes, somos agencia:</strong> cada estrategia se diseña a la medida de tu negocio y tu presupuesto — y se mide en resultados.</p>
+  <div class="hero-cta reveal d3">
+    <a class="btn btn-solid" href="#contacto">Hablemos de tu marca</a>
+    <span class="hint">Respondemos en menos de 48 horas</span>
+  </div>
+  <div class="scroll-ind"><span class="line"></span>Scroll</div>
+</header>
+
+<!-- SOCIAL PROOF -->
+<div class="social-proof">
+  <span class="label">Confiaron en nuestro equipo</span>
+  <div class="marquee" aria-label="Marcas con las que ha trabajado nuestro equipo">
+    <div class="marquee-track">
+      <span class="brand"><img src="https://unavatar.io/starbucks.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=starbucks.com&sz=128'" alt="Starbucks" loading="lazy">Starbucks</span>
+      <span class="brand"><img src="https://unavatar.io/bk.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=bk.com&sz=128'" alt="Burger King" loading="lazy">Burger King</span>
+      <span class="brand"><img src="https://unavatar.io/dominos.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=dominos.com&sz=128'" alt="Domino's" loading="lazy">Domino's</span>
+      <span class="brand"><img src="https://unavatar.io/papajohns.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=papajohns.com&sz=128'" alt="Papa John's" loading="lazy">Papa John's</span>
+      <span class="brand"><img src="https://unavatar.io/littlecaesars.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=littlecaesars.com&sz=128'" alt="Little Caesars" loading="lazy">Little Caesars</span>
+      <span class="brand"><img src="https://unavatar.io/alqueria.com.co" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=alqueria.com.co&sz=128'" alt="Alquería" loading="lazy">Alquería</span>
+      <span class="brand"><img src="https://unavatar.io/grupobimbo.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=grupobimbo.com&sz=128'" alt="Bimbo" loading="lazy">Bimbo</span>
+      <span class="brand"><img src="https://unavatar.io/samsung.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=samsung.com&sz=128'" alt="Samsung" loading="lazy">Samsung</span>
+      <span class="brand"><img src="https://unavatar.io/lenovo.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=lenovo.com&sz=128'" alt="Lenovo" loading="lazy">Lenovo</span>
+      <span class="brand"><img src="https://unavatar.io/starbucks.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=starbucks.com&sz=128'" alt="" loading="lazy">Starbucks</span>
+      <span class="brand"><img src="https://unavatar.io/bk.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=bk.com&sz=128'" alt="" loading="lazy">Burger King</span>
+      <span class="brand"><img src="https://unavatar.io/dominos.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=dominos.com&sz=128'" alt="" loading="lazy">Domino's</span>
+      <span class="brand"><img src="https://unavatar.io/papajohns.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=papajohns.com&sz=128'" alt="" loading="lazy">Papa John's</span>
+      <span class="brand"><img src="https://unavatar.io/littlecaesars.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=littlecaesars.com&sz=128'" alt="" loading="lazy">Little Caesars</span>
+      <span class="brand"><img src="https://unavatar.io/alqueria.com.co" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=alqueria.com.co&sz=128'" alt="" loading="lazy">Alquería</span>
+      <span class="brand"><img src="https://unavatar.io/grupobimbo.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=grupobimbo.com&sz=128'" alt="" loading="lazy">Bimbo</span>
+      <span class="brand"><img src="https://unavatar.io/samsung.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=samsung.com&sz=128'" alt="" loading="lazy">Samsung</span>
+      <span class="brand"><img src="https://unavatar.io/lenovo.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=lenovo.com&sz=128'" alt="" loading="lazy">Lenovo</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="sec-head">
+    <span class="label reveal">Quiénes somos</span>
+    <h2 class="reveal">Estuvimos de <span class="it">tu lado</span> del escritorio.</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="reveal">Antes de fundar Windbyrd aprobamos presupuestos, defendimos campañas ante directorios y sufrimos agencias que prometían mucho y medían poco. <strong>Conocemos la presión de un cierre de trimestre porque la vivimos.</strong></p>
+      <p class="reveal d1">Por eso Windbyrd no trabaja con paquetes: cada estrategia se construye a la medida de tu negocio, tu categoría y tu presupuesto. Nuestro foco es la industria de alimentos en Latam — sabemos cómo se decide una compra frente a una góndola, un menú o una pantalla.</p>
+      <p class="reveal d2">Detrás hay talentos creativos de distintas partes del mundo, elegidos por una sola regla: <strong>creatividad que mueve indicadores de negocio, no creatividad para ganar aplausos.</strong></p>
+      <a class="btn reveal d3" href="#metodo">Conoce cómo trabajamos</a>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><span class="num"><em>10</em></span><span class="desc">años de experiencia en marketing de alimentos</span></div>
+      <div class="stat reveal d1"><span class="num"><em>7</em></span><span class="desc">países de Latam: México, Panamá, Colombia, Ecuador, Perú, Chile y Argentina</span></div>
+      <div class="stat reveal d2"><span class="num"><em>+30</em></span><span class="desc">marcas en nuestro recorrido, como Starbucks, Burger King, Domino's, Alquería y Bimbo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="sec-head">
+    <span class="label reveal">Servicios</span>
+    <h2 class="reveal">Cuatro formas de vender más. Una sola manera de trabajar: <span class="it">a tu medida</span>.</h2>
+  </div>
+  <div class="services-grid">
+    <div class="card reveal">
+      <svg class="svc-icon" viewBox="0 0 48 48" aria-hidden="true"><polyline points="6,38 18,24 26,30 42,12"/><polyline points="32,12 42,12 42,22"/><line x1="6" y1="44" x2="42" y2="44"/></svg>
+      <h3>Estrategia y marketing digital</h3>
+      <p class="promise">Performance, pauta y redes diseñadas para la categoría de alimentos: campañas que convierten antojos en órdenes.</p>
+      <ul>
+        <li>Estrategia de canales y pauta digital</li>
+        <li>Social media con foco en conversión</li>
+        <li>SEO y posicionamiento de marca</li>
+      </ul>
+      <a href="#contacto">Hablemos de tu marca</a>
+    </div>
+    <div class="card reveal d1">
+      <svg class="svc-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="6"/><line x1="24" y1="7" x2="24" y2="13"/><line x1="24" y1="35" x2="24" y2="41"/><line x1="7" y1="24" x2="13" y2="24"/><line x1="35" y1="24" x2="41" y2="24"/></svg>
+      <h3>Branding y diseño</h3>
+      <p class="promise">Identidades que se reconocen en góndola, en menú y en pantalla — construidas para la decisión de compra, no solo para el manual de marca.</p>
+      <ul>
+        <li>Identidad visual y naming</li>
+        <li>Packaging y key visuals</li>
+        <li>Sistemas de marca multi-país</li>
+      </ul>
+      <a href="#contacto">Hablemos de tu marca</a>
+    </div>
+    <div class="card reveal d2">
+      <svg class="svc-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="25" rx="3"/><line x1="6" y1="17" x2="42" y2="17"/><circle cx="11" cy="13" r="1"/><circle cx="16" cy="13" r="1"/><polyline points="18,40 24,34 30,40"/><line x1="24" y1="34" x2="24" y2="44"/></svg>
+      <h3>Web y producto digital</h3>
+      <p class="promise">Sitios y e-commerce pensados para pedir, reservar y comprar: cada pantalla con un objetivo de negocio.</p>
+      <ul>
+        <li>Sitios y landings de campaña</li>
+        <li>E-commerce y menús digitales</li>
+        <li>CRO y analítica</li>
+      </ul>
+      <a href="#contacto">Hablemos de tu marca</a>
+    </div>
+    <div class="card reveal d3">
+      <svg class="svc-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="26" height="24" rx="4"/><polyline points="32,20 42,14 42,34 32,28"/><circle cx="15" cy="22" r="3"/></svg>
+      <h3>Contenido y storytelling</h3>
+      <p class="promise">Producción audiovisual y copy que abren el apetito: contenido sensorial hecho por talentos creativos de distintas partes del mundo.</p>
+      <ul>
+        <li>Video y fotografía food</li>
+        <li>Campañas creativas 360</li>
+        <li>Contenido always-on para redes</li>
+      </ul>
+      <a href="#contacto">Hablemos de tu marca</a>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="method" id="metodo">
+  <div class="sec-head">
+    <span class="label reveal">Método</span>
+    <h2 class="reveal">Sin paquetes. Sin recetas. <span class="it">Un plan para tu negocio.</span></h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <span class="n">01</span>
+      <h3>Escuchamos tu negocio</h3>
+      <p>Antes de hablar de campañas, entendemos tus números: categoría, canales, márgenes y qué le prometiste al directorio.</p>
+    </div>
+    <div class="step reveal d1">
+      <span class="n">02</span>
+      <h3>Diseñamos a tu medida</h3>
+      <p>Estrategia construida sobre tu presupuesto real — no al revés. Defines con nosotros prioridades, alcance y métricas de éxito.</p>
+    </div>
+    <div class="step reveal d2">
+      <span class="n">03</span>
+      <h3>Ejecutamos con talento global</h3>
+      <p>Creativos de distintas partes del mundo, seleccionados por proyecto según lo que tu marca necesita.</p>
+    </div>
+    <div class="step reveal d3">
+      <span class="n">04</span>
+      <h3>Medimos lo que importa</h3>
+      <p>Reportes en lenguaje de negocio: ventas, pedidos, costo por adquisición. Si algo no funciona, lo decimos y lo corregimos.</p>
+    </div>
+  </div>
+  <div class="method-close reveal">
+    <p>¿La diferencia? <span class="it">Fuimos clientes.</span> Sabemos exactamente qué esperarías de nosotros.</p>
+    <a class="btn" href="#contacto">Hablemos de tu marca</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="sec-head">
+    <span class="label reveal">Contacto</span>
+    <h2 class="reveal">Creatividad que vende. <span class="it">La tuya empieza aquí.</span></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal d1">
+      <p>Cuéntanos tu reto en 5 líneas. Te respondemos en menos de 48 horas con una mirada honesta: qué haríamos, en cuánto tiempo y cómo lo mediríamos.</p>
+      <div class="contact-direct">
+        <a href="mailto:hello@windbyrdstudio.com">hello@windbyrdstudio.com</a>
+        <a href="https://wa.me/573138666653" target="_blank" rel="noopener">WhatsApp +57 313 866 6653</a>
+        <a href="#" rel="noopener">LinkedIn</a>
+        <a href="#" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <form class="reveal d2" action="https://formsubmit.co/hello@windbyrdstudio.com" method="POST">
+      <input type="hidden" name="_subject" value="Nuevo contacto desde la web — Windbyrd Studio">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <div class="radio-row" role="radiogroup" aria-label="¿Qué te trae a Windbyrd?">
+        <input type="radio" name="motivo" id="r1" value="proyecto" checked><label for="r1">Tengo un proyecto</label>
+        <input type="radio" name="motivo" id="r2" value="talento"><label for="r2">Quiero trabajar aquí</label>
+        <input type="radio" name="motivo" id="r3" value="prensa"><label for="r3">Prensa y alianzas</label>
+      </div>
+      <div class="field-row">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="empresa" placeholder="Empresa" required>
+      </div>
+      <div class="field-row">
+        <input type="text" name="cargo" placeholder="Cargo" required>
+        <input type="text" name="pais" placeholder="País">
+      </div>
+      <input type="email" name="email" placeholder="Email corporativo" required>
+      <textarea name="reto" placeholder="Tu reto en 5 líneas…" required></textarea>
+      <button class="btn btn-solid" type="submit">Hablemos de tu marca</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <a class="logo" href="#top">W<span class="i">ı</span>ndbyrd<span class="studio">Studio</span></a>
+  <span>Windbyrd Studio — Panamá · Operamos en 7 países de Latam</span>
+  <ul class="foot-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const burger=document.querySelector('.hamburger'),links=document.querySelector('.nav-links');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// Orbes que siguen el mouse (solo desktop, respeta reduced-motion)
+const orbs=document.querySelectorAll('.orb');
+const canMove=window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(canMove&&orbs.length){
+  const hero=document.querySelector('.hero');
+  let raf=null;
+  hero.addEventListener('mousemove',e=>{
+    if(raf)return;
+    raf=requestAnimationFrame(()=>{
+      const x=e.clientX/innerWidth-.5, y=e.clientY/innerHeight-.5;
+      orbs[0].style.transform=`translate(${x*-70}px,${y*-50}px)`;
+      orbs[1].style.transform=`translate(${x*55}px,${y*65}px)`;
+      orbs[2].style.transform=`translate(${x*95}px,${y*-80}px)`;
+      raf=null;
+    });
+  });
+  hero.addEventListener('mouseleave',()=>orbs.forEach(o=>o.style.transform=''));
+}
+</script>
+</body>
+</html>
